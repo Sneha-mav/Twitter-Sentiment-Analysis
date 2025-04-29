@@ -35,7 +35,7 @@ def load_dataset(data_path):
     df['target']=df['target'].replace(4,1)
     return df[['target','text']]
 
-def dataset_preprocessing():
+def dataset_preprocessing(df):
 
     preprocessor=TextPreprocessor()
     df['cleaned_text']=df['text'].progress_apply(preprocessor.clean_text)
